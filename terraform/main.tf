@@ -1,7 +1,5 @@
 
 
-### 1. Terraform: Set Up Core Security Services
-
 provider "aws" {
   region = "us-east-1"
 }
@@ -41,9 +39,6 @@ resource "aws_config_configuration_recorder_status" "main" {
   is_enabled = true
 }
 
-
-### 2. Terraform IAM Role for AWS Config
-
 resource "aws_iam_role" "config_role" {
   name = "aws-config-role"
   assume_role_policy = jsonencode({
@@ -64,8 +59,6 @@ resource "aws_iam_role_policy_attachment" "config_attach" {
 }
 
 
-
-## 🚨 Day 5: Alerts + Auto-Remediation (Terraform)
 
 ### Terraform: SNS + CloudWatch Alarm
 
